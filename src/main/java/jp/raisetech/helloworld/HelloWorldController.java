@@ -1,8 +1,7 @@
 package jp.raisetech.helloworld;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -12,8 +11,8 @@ public class HelloWorldController {
         return "hello world";
     }
 
-    @PostMapping("/country")
-    public String country(@RequestBody String country) {
+    @GetMapping("/country")
+    public String country(@RequestParam("country") String country) {
         String message = "Hello World " + country + "の挨拶は";
 
         //"Post"で受け取った文字列に応じたメッセージを返す
